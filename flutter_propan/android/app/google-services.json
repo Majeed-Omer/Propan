@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1009612166889",
+    "project_id": "propan-8563c",
+    "storage_bucket": "propan-8563c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1009612166889:android:dc0dfbd69df549a154c278",
+        "android_client_info": {
+          "package_name": "krd.propan.ap1.propan"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkjxxlqFymPAZZcz8tCy7LXEm4QSxVew0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
