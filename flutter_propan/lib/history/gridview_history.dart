@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/globals/globals.dart';
 import 'package:flutter_app/google_map/google_map_come.dart';
 import 'package:flutter_app/history/history_widget.dart';
+import 'package:flutter_app/l10n/app_localizations.dart';
 import 'package:flutter_app/models/orders.dart';
 import 'package:flutter_app/models/users.dart';
 import 'package:flutter_app/services/Services_crud_orders.dart';
 import 'package:flutter_app/services/services_crud_users.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class GrideviewHistory extends StatefulWidget {
   const GrideviewHistory({super.key});

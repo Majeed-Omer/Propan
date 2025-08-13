@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/l10n/app_localizations.dart';
 import 'package:flutter_app/main.dart';
 import 'package:flutter_app/services/Services_crud_orders_delivery.dart';
 import 'package:flutter_app/globals/globals.dart';
 import 'package:flutter_app/services/services_crud_users.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 

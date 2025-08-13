@@ -3,18 +3,18 @@ import 'package:firebase_app_check/firebase_app_check.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_app/l10n/app_localizations.dart';
 import 'package:flutter_app/l10n/l10n.dart';
 import 'package:flutter_app/google_map/locationProvider.dart';
 import 'package:flutter_app/services/fairbase_api.dart';
 import 'package:flutter_app/splash.dart';
-import 'package:flutter_kurdish_localization/kurdish_cupertino_localization_delegate.dart';
-import 'package:flutter_kurdish_localization/kurdish_material_localization_delegate.dart';
-import 'package:flutter_kurdish_localization/kurdish_widget_localization_delegate.dart';
+// import 'package:flutter_kurdish_localization/kurdish_cupertino_localization_delegate.dart';
+// import 'package:flutter_kurdish_localization/kurdish_material_localization_delegate.dart';
+// import 'package:flutter_kurdish_localization/kurdish_widget_localization_delegate.dart';
 import 'package:location/location.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -45,14 +45,14 @@ Future<void> main() async {
           child: MyApp(),
         ),
       ],
-      child: MaterialApp(debugShowCheckedModeBanner: false, home: MyApp()),
+      child: MyApp(), 
     ),
     // ),
   );
 }
 
 class LanguageProvider extends ChangeNotifier {
-  String _selectedLanguage = '';
+  String? _selectedLanguage;
   LanguageProvider() {
     _loadLanguage();
   }
@@ -63,7 +63,7 @@ class LanguageProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  String get selectedLanguage => _selectedLanguage;
+  String get selectedLanguage => _selectedLanguage ?? "en";
 
   void setLanguage(String languageCode) {
     _selectedLanguage = languageCode;
@@ -92,13 +92,14 @@ class _MyAppState extends State<MyApp> {
       supportedLocales: L10n.all,
       locale: Locale(languageProvider.selectedLanguage),
       localizationsDelegates: [
+        
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
-        KurdishMaterialLocalizations.delegate,
-        KurdishWidgetLocalizations.delegate,
-        KurdishCupertinoLocalizations.delegate,
+        // KurdishMaterialLocalizations.delegate,
+        // KurdishWidgetLocalizations.delegate,
+        // KurdishCupertinoLocalizations.delegate,
       ],
     );
   }

@@ -2,8 +2,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/driver/wrapper_driver.dart';
 import 'package:flutter_app/globals/globals.dart';
+import 'package:flutter_app/l10n/app_localizations.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:location/location.dart';
 import 'package:provider/provider.dart';
 

@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/home/home.dart';
+import 'package:flutter_app/l10n/app_localizations.dart';
 import 'package:flutter_app/main.dart';
 import 'package:flutter_app/order/order.dart';
 import 'package:flutter_app/globals/globals.dart';
@@ -10,7 +11,6 @@ import 'package:flutter_app/services/Services_crud_orders.dart';
 import 'package:flutter_app/wrapper.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter_app/models/places.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:location/location.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
@@ -150,13 +150,13 @@ class _GooglMapOrderState extends State<GooglMapOrder> {
                         "assets/arrow_back_ar.png",
                       )),
             style: ButtonStyle(
-              shape: MaterialStateProperty.all(CircleBorder(
+              shape: WidgetStateProperty.all(CircleBorder(
                   side: BorderSide(
                       width: 2.0,
                       color: Colors
                           .black))), // <-- Adjust the width and color of the border
               backgroundColor:
-                  MaterialStateProperty.all(globalColor), // <-- Button color
+                  WidgetStateProperty.all(globalColor), // <-- Button color
             ),
           ),
         ),

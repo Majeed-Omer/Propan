@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/auth/appbar_auth.dart';
 import 'package:flutter_app/auth/login.dart';
 import 'package:flutter_app/auth/verify.dart';
+import 'package:flutter_app/l10n/app_localizations.dart';
 import 'package:flutter_app/services/auth_services.dart';
 import 'package:flutter_app/globals/globals.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl_phone_field/intl_phone_field.dart';
 
@@ -94,44 +94,7 @@ class _SignupState extends State<Signup> {
               SizedBox(
                 height: h * 0.016,
               ),
-              // Directionality(
-              //   textDirection: TextDirection.ltr,
-              //   child: Container(
-              //       padding: EdgeInsets.symmetric(
-              //           vertical: w >= 600 ? h * 0.027 : h * 0.0075,
-              //           horizontal: w * 0.015),
-              //       margin: EdgeInsets.symmetric(horizontal: w * 0.12),
-              //       decoration: BoxDecoration(
-              //         borderRadius: BorderRadius.circular(w * 0.03),
-              //         color: Colors.white,
-              //         border: Border.all(
-              //             color: globalColor, width: w > 600 ? 2.0 : 1.0),
-              //       ),
-              //       child: Row(
-              //         children: [
-              //           Text(
-              //             '+964',
-              //             style: TextStyle(
-              //               color: Colors.black,
-              //               fontSize: w * 0.04,
-              //             ),
-              //           ),
-              //           IntrinsicWidth(
-              //             child: TextField(
-              //               controller: phoneController,
-              //               keyboardType: TextInputType.phone,
-              //               decoration: InputDecoration(
-              //                 hintText: '7@@@@@@@@@',
-              //                 hintStyle: TextStyle(
-              //                     color: Colors.grey[400], fontSize: w * 0.04),
-              //                 border: InputBorder.none,
-              //                 contentPadding: EdgeInsets.zero,
-              //               ),
-              //             ),
-              //           ),
-              //         ],
-              //       )),
-              // ),
+              
               Directionality(
                 textDirection: TextDirection.ltr,
                 child: Container(
@@ -322,15 +285,37 @@ class _SignupState extends State<Signup> {
   }
 
   _validator() async {
-    http.Response? response = await AuthServices.validator(
-        context, nameController.text, phoneController, passwordController.text);
-    Map responseMap = jsonDecode(response!.body);
+  http.Response? response = await AuthServices.validator(
+    context,
+    nameController.text,
+    phoneController,
+    passwordController.text,
+  );
+
+  if (response == null) {
+    errorSnackBar(context, "No response from the server.");
+    return;
+  }
+
+  print("Status Code: ${response.statusCode}");
+  print("Response Body: ${response.body}");
+
+  try {
     if (response.statusCode == 200) {
+      Map<String, dynamic> responseMap = jsonDecode(response.body);
       verifyNumber();
     } else {
-      errorSnackBar(context, responseMap.values.first[0]);
+      // Attempt to parse the error
+      Map<String, dynamic> errorMap = jsonDecode(response.body);
+      String errorMessage = errorMap.values.first[0].toString();
+      errorSnackBar(context, errorMessage);
     }
+  } catch (e) {
+    print("Exception during response parse: $e");
+    errorSnackBar(context, "Server error. Please try again later.");
   }
+}
+
 
   Future<void> verifyNumber() async {
     try {

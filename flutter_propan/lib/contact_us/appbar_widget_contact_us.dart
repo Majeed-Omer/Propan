@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/l10n/app_localizations.dart';
 import 'package:flutter_app/main.dart';
 import 'package:flutter_app/globals/globals.dart';
 import 'package:flutter_app/settings/setting.dart';
 import 'package:flutter_app/wrapper.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AppbarWidgetContactUs {
   static AppBar appBarWidgetContectUs(BuildContext context) {

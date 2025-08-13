@@ -7,3 +7,4 @@ class L10n{
     const Locale('ar'),
   ];
 }
+

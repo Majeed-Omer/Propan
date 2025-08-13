@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/home/add_locations_widget.dart';
+import 'package:flutter_app/l10n/app_localizations.dart';
 import 'package:flutter_app/main.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AppbarHome {
   static AppBar AppBarHome(BuildContext context) {

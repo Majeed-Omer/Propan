@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_app/auth/login.dart';
 import 'package:flutter_app/driver/wrapper_driver.dart';
 import 'package:flutter_app/globals/circular_progress.dart';
+import 'package:flutter_app/l10n/app_localizations.dart';
 import 'package:flutter_app/main.dart';
 import 'package:flutter_app/models/users.dart';
 import 'package:flutter_app/globals/globals.dart';
@@ -12,7 +13,6 @@ import 'package:flutter_app/settings/listTile_widget.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ListviewDriversWidget extends StatefulWidget {
   const ListviewDriversWidget({super.key});

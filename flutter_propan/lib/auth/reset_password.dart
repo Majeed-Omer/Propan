@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/auth/login.dart';
 import 'package:flutter_app/globals/globals.dart';
+import 'package:flutter_app/l10n/app_localizations.dart';
 import 'package:flutter_app/services/services_crud_users.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ResetPassword extends StatefulWidget {
   final String id;

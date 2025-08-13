@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/google_map/google_map_order.dart';
+import 'package:flutter_app/l10n/app_localizations.dart';
 import 'package:flutter_app/order/order_class.dart';
 import 'package:flutter_app/globals/globals.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ColumnWidget extends StatefulWidget {
   final String orderType;

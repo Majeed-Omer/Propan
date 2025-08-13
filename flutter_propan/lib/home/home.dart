@@ -16,7 +16,7 @@ class _HomeState extends State<Home> {
   final controller = CarouselController();
   int activateIndex = 0;
   final sliderImages = ['assets/gas-factory.jpg', 'assets/gas-factory2.jpg'];
-  void animateToSlide(int index) => controller.animateToPage(index);
+  void animateToSlide(int index) => controller.animateTo(index.toDouble(), duration: Duration(milliseconds: 300), curve: Curves.ease);
   Widget buildIndicator() {
     final w = MediaQuery.of(context).size.width;
     return AnimatedSmoothIndicator(
@@ -68,7 +68,6 @@ class _HomeState extends State<Home> {
                   borderRadius: BorderRadius.circular(w * 0.05),
                   child: Stack(children: [
                     CarouselSlider.builder(
-                        carouselController: controller,
                         itemCount: sliderImages.length,
                         itemBuilder: (context, index, realIndex) {
                           final sliderImage = sliderImages[index];

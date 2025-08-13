@@ -7,6 +7,7 @@ import 'package:flutter_app/auth/signup.dart';
 import 'package:flutter_app/globals/circular_progress.dart';
 import 'package:flutter_app/contact_us/contact_us.dart';
 import 'package:flutter_app/home/home.dart';
+import 'package:flutter_app/l10n/app_localizations.dart';
 import 'package:flutter_app/main.dart';
 import 'package:flutter_app/models/users.dart';
 import 'package:flutter_app/globals/globals.dart';
@@ -16,7 +17,6 @@ import 'package:flutter_app/wrapper.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ListviewWidget extends StatefulWidget {
   const ListviewWidget({super.key});

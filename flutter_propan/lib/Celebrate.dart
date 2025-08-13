@@ -1,6 +1,6 @@
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_app/l10n/app_localizations.dart';
 
 class Celebrate extends StatefulWidget {
   const Celebrate({super.key});
@@ -36,7 +36,8 @@ class _CelebrateState extends State<Celebrate> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            AppLocalizations.of(context)!.youBuySuccefully,
+            // AppLocalizations.of(context)!.youBuySuccefully,
+            "You bought successfully!",
             style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: w * 0.05,

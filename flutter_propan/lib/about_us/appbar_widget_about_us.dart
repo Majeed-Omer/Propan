@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/l10n/app_localizations.dart';
 import 'package:flutter_app/main.dart';
 import 'package:flutter_app/globals/globals.dart';
 import 'package:flutter_app/settings/setting.dart';
 import 'package:flutter_app/wrapper.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AppbarWidgetAboutUS {
   static AppBar appBarWidgetAboutUs(BuildContext context) {
@@ -40,13 +40,13 @@ class AppbarWidgetAboutUS {
                 "assets/cancel.png",
               )),
           style: ButtonStyle(
-            shape: MaterialStateProperty.all(CircleBorder(
+            shape: WidgetStateProperty.all(CircleBorder(
                 side: BorderSide(
                     width: 2.0,
                     color: Colors
                         .black))), // <-- Adjust the width and color of the border
             backgroundColor:
-                MaterialStateProperty.all(globalColor), // <-- Button color
+                WidgetStateProperty.all(globalColor), // <-- Button color
           ),
         ),
       ),

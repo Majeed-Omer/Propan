@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/auth/appbar_auth.dart';
 import 'package:flutter_app/auth/reset_password.dart';
 import 'package:flutter_app/globals/globals.dart';
+import 'package:flutter_app/l10n/app_localizations.dart';
 import 'package:flutter_app/models/users.dart';
 import 'package:flutter_app/services/auth_services.dart';
 import 'package:flutter_app/services/services_crud_users.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 

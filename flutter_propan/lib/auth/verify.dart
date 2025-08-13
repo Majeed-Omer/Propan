@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/auth/appbar_auth.dart';
 import 'package:flutter_app/google_map/google_map_first.dart';
 import 'package:flutter_app/globals/globals.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_app/l10n/app_localizations.dart';
 
 // ignore: must_be_immutable
 class Verify extends StatefulWidget {
